@@ -1,17 +1,17 @@
-package characters.domain.model;
+package com.rest.characters.ApiRestCharacters.characters.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
-public class Episode {
-    private Integer id;
+public class EpisodeRequestModel {
+    private String id;
     private String name;
     private String air_date;
     private String episode;

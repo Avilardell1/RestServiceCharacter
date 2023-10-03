@@ -1,26 +1,23 @@
-package characters.api;
+package com.rest.characters.ApiRestCharacters.characters.api;
 
-import characters.api.dto.CharacterRSDTO;
-import characters.ports.CharactersService;
-import lombok.RequiredArgsConstructor;
+import com.rest.characters.ApiRestCharacters.characters.api.dto.CharacterRSDTO;
+import com.rest.characters.ApiRestCharacters.characters.ports.CharactersService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequiredArgsConstructor
+@RequestMapping("search-character-appearance")
 public class CharactersController {
 
-   @Autowired	
-   private final CharactersService service;
+    private final CharactersService service;
 
     public CharactersController(CharactersService service) {
     	this.service = service;
     }
 
-	@RequestMapping(value="/search-character-appearance/{name}",method=RequestMethod.GET)
+	@GetMapping(value="/{name}")
     public ResponseEntity<CharacterRSDTO> getAppearance(@PathVariable("name") String name) {
         return new ResponseEntity<>(this.service.getCharacter(name), HttpStatus.OK);
     }

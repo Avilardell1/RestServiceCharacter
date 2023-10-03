@@ -1,4 +1,4 @@
-package characters.api.dto;
+package com.rest.characters.ApiRestCharacters.characters.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,8 +14,4 @@ public class CharacterRSDTO {
     private String name;
     private List<String> episodes;
     private String first_appearance;
-
-    public CharacterRSDTO() {
-
-    }
 }
